@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetConnect</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="top-bar">
+    <div class="logo">🐾 PetConnect</div>
+
+    <div class="top-nav">
+        <span onclick="goHome()">HOME</span>
+        <span onclick="showMain('adoption')">ADOPT</span>
+        <span onclick="showMain('lost')">LOST PET</span>
+        <span onclick="showSearch()">SEARCH</span>
+    </div>
+</div>
+
+<!-- HOME -->
+<div id="home-page">
+    <h1>PetConnect</h1>
+    <p class="subtitle">Find pets. Find homes. Reunite families.</p>
+</div>
+
+<!-- ADOPTION -->
+<div id="adoption-page">
+    <button onclick="goHome()">← Back</button>
+
+    <h2>Adoption</h2>
+
+    <button onclick="showAdoption('animal')">Add Animal</button>
+    <button onclick="showAdoption('owner')">Add Owner</button>
+
+    <section id="animal-form">
+        <form onsubmit="submitAdoptionAnimalProfile(event)">
+            <input type="text" id="animal-name" placeholder="Animal Name" required>
+
+            <select id="animal-type">
+                <option>Dog</option>
+                <option>Cat</option>
+            </select>
+
+            <input type="file" id="animal-picture" accept="image/*">
+
+            <button type="submit">Create Animal</button>
+        </form>
+    </section>
+
+    <section id="owner-form">
+        <form>
+            <input type="text" placeholder="Owner Name">
+            <button>Create Owner</button>
+        </form>
+    </section>
+</div>
+
+<!-- LOST -->
+<div id="lost-page">
+    <button onclick="goHome()">← Back</button>
+
+    <h2>Lost & Found</h2>
+
+    <button onclick="showLost('missing')">Missing Dog</button>
+    <button onclick="showLost('found')">Found Dog</button>
+
+    <section id="missing-form">
+        <form onsubmit="submitMissingDogProfile(event)">
+            <input type="text" id="missing-dog-name" placeholder="Dog Name" required>
+
+            <select id="missing-dog-color">
+                <option>Black</option>
+                <option>Brown</option>
+                <option>White</option>
+            </select>
+
+            <input type="file" id="missing-dog-picture">
+
+            <button>Report Missing</button>
+        </form>
+    </section>
+
+    <section id="found-form">
+        <form onsubmit="submitFoundDogProfile(event)">
+            <select id="found-dog-color">
+                <option>Black</option>
+                <option>Brown</option>
+                <option>White</option>
+            </select>
+
+            <input type="file" id="found-dog-picture">
+
+            <button>Report Found</button>
+        </form>
+    </section>
+</div>
+
+<!-- SEARCH -->
+<div id="search-page">
+    <button onclick="goHome()">← Back</button>
+
+    <h2>Search</h2>
+
+    <button onclick="searchAll()">View Animals</button>
+
+    <div id="search-results"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
