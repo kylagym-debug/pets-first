@@ -49,17 +49,38 @@
             </select>
 
             <input type="file" id="animal-picture" accept="image/*">
-
+            
+<div id="animal-characteristics">
+    <label><input type="checkbox" value="Friendly"> Friendly</label>
+    <label><input type="checkbox" value="Energetic"> Energetic</label>
+    <label><input type="checkbox" value="Calm"> Calm</label>
+    <label><input type="checkbox" value="Playful"> Playful</label>
+</div>
+            
             <button type="submit">Create Animal</button>
         </form>
     </section>
 
     <section id="owner-form">
-        <form>
-            <input type="text" placeholder="Owner Name">
-            <button>Create Owner</button>
+        <form onsubmit="submitOwnerProfile(event)">
+            <input type="text" id="owner-name" placeholder="Owner Name" required>
+
+            <select id="animal-type">
+                <option>Dog</option>
+                <option>Cat</option>
+            </select>
+
+            <div id="dream-characteristics">
+                <label><input type="checkbox" value="Friendly"> Friendly</label>
+                <label><input type="checkbox" value="Energetic"> Energetic</label>
+                <label><input type="checkbox" value="Calm"> Calm</label>
+                <label><input type="checkbox" value="Playful"> Playful</label>
+            </div>
+
+            <button type="submit">Create Owner Profile</button>
         </form>
     </section>
+    
 </div>
 
 <!-- LOST -->
@@ -83,6 +104,15 @@
 
             <input type="file" id="missing-dog-picture">
 
+  <select id="missing-dog-size">
+    <option value="">Select Size</option>
+    <option>Small</option>
+    <option>Medium</option>
+    <option>Large</option>
+</select>
+
+<input type="text" id="missing-dog-standout" placeholder="Notable features (collar, spots, etc.)">
+            
             <button>Report Missing</button>
         </form>
     </section>
@@ -97,6 +127,15 @@
 
             <input type="file" id="found-dog-picture">
 
+            <select id="found-dog-size">
+    <option value="">Select Size</option>
+    <option>Small</option>
+    <option>Medium</option>
+    <option>Large</option>
+</select>
+
+<input type="text" id="found-dog-standout" placeholder="Notable features (collar, spots, etc.)">
+            
             <button>Report Found</button>
         </form>
     </section>
