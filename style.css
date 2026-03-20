@@ -72,3 +72,9 @@ button {
     height: 150px;
     object-fit: cover;
 }
+.home-graphic {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 40px;
+    opacity: 0.8;
+}
